@@ -9,28 +9,26 @@
         br = branch
         unstage = reset HEAD --
         dc = diff --cached
-        d = diff 
+        d = diff
         ds = diff --staged
-        tree = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%Cblue\\ [%cn]" --date=short --abbrev-commit --graph --all
+        tree = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%C(yellow)\\ [%cn]" --date=short --abbrev-commit --graph --all
         ls = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%Cblue\\ [%cn]" --date=short
         ll = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%Cblue\\ [%cn]" --date=short --numstat
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
         ri = rebase --interactive
-	pr = pull --rebase
-	fe = fetch --prune
+        pr = pull --rebase
+        fe = fetch --prune
+        fix = commit --amend -C HEAD
+        alias = config --global --get-regexp alias
 [user]
-	name = Mathieu Mure
-	email = mathieu.mure@worldline.com
+        name = Mathieu Mure
+        email = mathieu.mure@gmail.com
+[core]
+        editor = "vim"
 [credential]
         helper = cache --timeout=13600
-#[credential "https://gitlab.worldline.tech"]
-#        username = a536183
-[credential "https://github.com"]
-        username = mathieumure
-[credential "https://kazan.atosworldline.com"]
-        username = a536183
 [rerere]
-	enabled = true
+        enabled = true
 [merge]
     keepBackup = false;
     tool = p4merge
@@ -55,4 +53,4 @@
     added = green
     changed = yellow
 [color "diff"]
-    old = magenta bold
+    old = magenta bol
