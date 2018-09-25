@@ -1,0 +1,58 @@
+[alias]
+	last = log -1 --stat
+       cp = cherry-pick
+       co = checkout
+       cl = clone
+       ct = commit
+       st = status -sb
+       s = status
+	br = branch
+       unstage = reset HEAD --
+       dc = diff --cached
+       d = diff 
+	ds = diff --staged
+       tree = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%C(yellow)\\ [%cn]" --date=short --abbrev-commit --graph --all
+       ls = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%Cblue\\ [%cn]" --date=short
+       ll = log --decorate --pretty=format:"%C(yellow)%h\\ %C(green)%ad%C(cyan)%d\\ %Creset%s%Cblue\\ [%cn]" --date=short --numstat
+       lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+       ri = rebase --interactive
+	pr = pull --rebase
+	fe = fetch --prune --tags
+	fix = commit --amend -C HEAD
+	alias = config --global --get-regexp alias
+[user]
+	name = Mathieu Mure
+	email = mathieu.mure@gmail.com
+[core]
+	editor = "vim"
+[credential]
+        helper = cache --timeout=13600
+[credential "https://github.com"]
+        username = mathieumure
+[rerere]
+	enabled = true
+[merge]
+    keepBackup = false;
+    tool = p4merge
+[mergetool]
+    prompt = false
+[mergetool "p4merge"]
+    cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+[diff]
+    tool = p4merge
+[difftool]
+    prompt = false
+[difftool "p4merge"]
+    cmd = p4merge "$LOCAL" "$REMOTE"
+    keepTemporaries = false
+    trustExitCode = false
+    keepBackup = false
+[color "status"]
+    untracked = yellow
+    added = green
+    changed = yellow
+[color "diff"]
+    old = magenta bold

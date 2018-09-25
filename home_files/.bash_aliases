@@ -1,0 +1,10 @@
+export PROJECT=/mnt/c/Users/mathieu.mure/Project
+alias serve="browser-sync start --server"
+alias npm="/usr/bin/npm"
+alias code="/mnt/c/Program\ Files\ \(x86\)/Microsoft\ VS\ Code/bin/code"
+alias explorer="/mnt/c/Windows/explorer.exe"
+alias jest="./node_modules/.bin/jest"
+alias yup="ncu --upgrade --upgradeAll && yarn upgrade"
+alias git-prune="git br --merged | grep -v develop | grep -v release | xargs git branch -d"
+alias git-auto-update="git stash && git co develop && git fe && git rebase && git-prune && git co - && git stash pop"
+alias wd="cd $PROJECT"
