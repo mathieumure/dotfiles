@@ -1,7 +1,8 @@
 [alias]
-	last = log -1 --stat
+       last = log -1 --stat
        cp = cherry-pick
        co = checkout
+       sw = switch
        cl = clone
        ct = commit
        st = status -sb
@@ -20,15 +21,21 @@
 	fe = fetch --prune --tags
 	fix = commit --amend -C HEAD
 	alias = config --global --get-regexp alias
+	wip = !git add . && git commit -m "WIP"
+	unwip = "!f() { if [ \"$(git log -1 --pretty=%B | head -n1)\" = \"WIP\" ]; then git reset HEAD~1; echo \"Unwipped\"; else echo \"Last commit wasn't a WIP\"; fi;}; f" 
+        ff = merge --ff-only
 [user]
 	name = Mathieu Mure
 	email = mathieu.mure@gmail.com
 [core]
 	editor = "vim"
+	excludesfile = /Users/mmure/.gitignore_global
 [credential]
         helper = cache --timeout=13600
 [credential "https://github.com"]
         username = mathieumure
+[credential "https://github.m6web.fr"]
+        username = m_mure
 [rerere]
 	enabled = true
 [merge]
@@ -56,3 +63,5 @@
     changed = yellow
 [color "diff"]
     old = magenta bold
+[pager]
+	branch = false
