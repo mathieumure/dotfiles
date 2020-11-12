@@ -29,7 +29,7 @@
 	email = mathieu.mure@gmail.com
 [core]
 	editor = "vim"
-	excludesfile = /Users/mmure/.gitignore_global
+	excludesfile = /Users/mmure/.gitignore
 [credential]
         helper = cache --timeout=13600
 [credential "https://github.com"]
