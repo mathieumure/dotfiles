@@ -1,0 +1,13 @@
+[user]
+	email = mathieu.mure@gmail.com
+	name = Mathieu Mure
+[alias]
+	co = checkout
+	s = status
+	br = branch
+	fe = fetch --prune --tags
+	fix = commit --amend -C HEAD
+	wip = !git add . && git commit -m "WIP"
+	unwip = "!f() { if [ \"$(git log -1 --pretty=%B | head -n1)\" = \"WIP\" ]; then git reset HEAD~1; echo \"Unwipped\"; else echo \"Last commit wasn't a WIP\"; fi;}; f"
+[pager]
+	branch = false
