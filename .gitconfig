@@ -11,3 +11,12 @@
 	unwip = "!f() { if [ \"$(git log -1 --pretty=%B | head -n1)\" = \"WIP\" ]; then git reset HEAD~1; echo \"Unwipped\"; else echo \"Last commit wasn't a WIP\"; fi;}; f"
 [pager]
 	branch = false
+	tag = false
+[push]
+	autoSetupRemote = true
+[remote "origin"]
+	prune = true
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
